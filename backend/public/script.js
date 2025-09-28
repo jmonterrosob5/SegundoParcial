@@ -9,9 +9,7 @@ document.getElementById('registroForm').addEventListener('submit', async functio
 
     const res = await fetch(`${BASE_URL}/clientes/registrar`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nombre, email, telefono })
     });
 
@@ -26,16 +24,14 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 
     const res = await fetch(`${BASE_URL}/clientes/login`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, telefono })
     });
 
     const data = await res.json();
-    if (data.success) {
+    if (data.cliente_id) {
+        document.getElementById('clienteId').value = data.cliente_id;
         document.getElementById('ordenSection').style.display = 'block';
-        document.getElementById('clienteId').value = data.cliente.id;
     } else {
         alert(data.message || 'Login fallido');
     }
@@ -49,9 +45,7 @@ document.getElementById('ordenForm').addEventListener('submit', async function(e
 
     const res = await fetch(`${BASE_URL}/ordenes/crear`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cliente_id, platillo_nombre, notes })
     });
 
