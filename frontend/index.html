@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurante Órdenes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Restaurante Órdenes</h1>
+  <div id="registro">
+    <h2>Registrar Cliente</h2>
+    <input id="nombre" placeholder="Nombre">
+    <input id="email" placeholder="Email">
+    <input id="telefono" placeholder="Teléfono">
+    <button onclick="registrarCliente()">Registrar</button>
+  </div>
+  <div id="login">
+    <h2>Login Cliente</h2>
+    <input id="login_email" placeholder="Email">
+    <input id="login_telefono" placeholder="Teléfono">
+    <button onclick="loginCliente()">Login</button>
+  </div>
+  <div id="ordenes" style="display:none;">
+    <h2>Órdenes</h2>
+    <input id="platillo" placeholder="Platillo">
+    <input id="notes" placeholder="Notas">
+    <button onclick="crearOrden()">Crear Orden</button>
+    <ul id="lista_ordenes"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
